@@ -1,4 +1,4 @@
-package app_saude;
+package models;
 
 public class Exame {
     private String especialidade;
@@ -40,6 +40,10 @@ public class Exame {
 	
 	public String getNome() {
 		return this.getEspecialidade() + " (" + this.getHospital().getNome() + ") - " + this.getMedico().getNome() + " - " + this.getArquivo();
+	}
+	
+	public String getResultado() {
+		return "Exame ("+ this.getNome() +"): Resultado";
 	}
 
 

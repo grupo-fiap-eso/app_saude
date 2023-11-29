@@ -1,4 +1,4 @@
-package app_saude;
+package models;
 
 public class Medico extends Pessoa {
 	private String especialidade;

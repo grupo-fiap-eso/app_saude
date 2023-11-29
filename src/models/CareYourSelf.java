@@ -1,6 +1,6 @@
-package app_saude;
+package models;
 
-public class AppSaude {
+public class CareYourSelf {
 	public static void main(String[] args) {
 		
 		// Cadastrar Hospitais
@@ -19,7 +19,7 @@ public class AppSaude {
 		
 		//Cadastrar Pacientes
 		Paciente paciente1 = new Paciente("Joao", "Rua das Flores", "joao@gmail.com", "(013)99999-5555", 18);
-		Paciente paciente2 = new Paciente("Joaoa", "Rua 500", "joana@gmail.com", "(013)99999-4444", 28);
+		Paciente paciente2 = new Paciente("Joana", "Rua 500", "joana@gmail.com", "(013)99999-4444", 28);
 		
 		paciente1.salvaExame(exame1);
 		paciente1.salvaExame(exame2);
@@ -32,8 +32,13 @@ public class AppSaude {
 		
 		paciente1.exibirInformacoes();
 		paciente2.exibirInformacoes();
+		
+		//Autorizar acesso a informacoes
+		Autorizacao auth1 = Autorizacao.autorizar_acesso(paciente1);
+		Autorizacao auth2 = Autorizacao.negar_acesso(paciente2);
 
-
+		System.out.println(auth1.isAutoriza());
+		System.out.println(auth2.isAutoriza());
 	}
 
 }

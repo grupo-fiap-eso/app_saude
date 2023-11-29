@@ -1,4 +1,4 @@
-package app_saude;
+package models;
 
 abstract class Pessoa {
     private String nome;

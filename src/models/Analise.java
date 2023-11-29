@@ -1,4 +1,4 @@
-package app_saude;
+package models;
 
 public class Analise {
 	private Medico medicoResponsavel;

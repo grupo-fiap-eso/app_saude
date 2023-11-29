@@ -1,4 +1,4 @@
-package app_saude;
+package models;
 
 public class Paciente extends Pessoa {
     private Exame[] exames = new Exame[10];
