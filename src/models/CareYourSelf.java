@@ -95,7 +95,7 @@ public class CareYourSelf extends JFrame{
 	
 	public static void main(String[] args) {
 		
-		AppSaude janela = new AppSaude();
+		CareYourSelf janela = new CareYourSelf();
 		janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		janela.setLocationRelativeTo(null);
 		
