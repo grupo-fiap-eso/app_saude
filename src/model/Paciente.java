@@ -1,4 +1,4 @@
-package models;
+package model;
 
 public class Paciente extends Pessoa {
     private Exame[] exames = new Exame[10];
@@ -14,7 +14,7 @@ public class Paciente extends Pessoa {
         System.out.println("email: " + getEmail());
         System.out.println("Telefone: " + getTelefone());
         System.out.println("Idade: " + getIdade());
-        System.out.println("=== Exames Feitos (" + this.exames.length + "):");
+        System.out.println("=== Exames Feitos (" + this.contExames() + "):");
         this.getExames();
     }
     
@@ -44,7 +44,21 @@ public class Paciente extends Pessoa {
 		}
 	}
 	
+	// Conta quantos exames o paciente tem
+	public int contExames() {
+	    int contador = 0;
+
+	    for(int i = 0; i < this.exames.length; i++){
+	           if(this.exames[i] != null){
+	        	   contador += 1;
+	           }
+	    }
+
+	    return contador;
+	}
+	
 	private String getTipo() {
 		return "Cliente";
 	}
+
 }

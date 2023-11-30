@@ -1,4 +1,4 @@
-package models;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -18,6 +18,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
+
+import model.Autorizacao;
+import model.Exame;
+import model.Hospital;
+import model.Medico;
+import model.Paciente;
 public class CareYourSelf extends JFrame{
 	
 	
