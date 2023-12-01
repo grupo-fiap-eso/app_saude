@@ -2,22 +2,26 @@ package model;
 
 public class Paciente extends Pessoa {
     private Exame[] exames = new Exame[10];
+    private Autorizacao auth = new Autorizacao(false);
 
     public Paciente(String nome, String endereco, String email, String telefone, int idade) {
         super(nome, endereco, email, telefone, idade);
     }
 
-    public void exibirInformacoes() {
-    	System.out.println("Tipo: " + getTipo());
-        System.out.println("Nome: " + getNome());
-        System.out.println("Endereco: " + getEndereco());
-        System.out.println("email: " + getEmail());
-        System.out.println("Telefone: " + getTelefone());
-        System.out.println("Idade: " + getIdade());
-        System.out.println("=== Exames Feitos (" + this.contExames() + "):");
-        this.getExames();
+    public String exibirInformacoes() {
+    	String msg = "";
+    	msg = "Tipo: " + getTipo() + "\n";
+		msg += "Nome: " + getNome() + "\n";
+		msg += "Endereco: " + getEndereco() + "\n";
+		msg += "email: " + getEmail() + "\n";
+		msg += "Telefone: " + getTelefone() + "\n";
+		msg += "Idade: " + getIdade() + "\n";
+		msg += "=== Exames Feitos (" + this.contExames() + "):" + "\n";
+		msg += this.getExames();
+		msg += this.getAutorizacao().isAutoriza();
+    	return msg;
     }
-    
+
     public void salvaExame(Exame exame) {
         // encontra primeira posição disponivel no vetor
         int posicaoNula = -1;
@@ -36,12 +40,14 @@ public class Paciente extends Pessoa {
         }
     }
 
-	public void getExames() {
+	public String getExames() {
+		String msg = "";
 		for (int i = 0; i < (this.exames.length); i++) {
 			if (this.exames[i] != null) {
-			  System.out.println((i+1) + " - " + this.exames[i].getNome());
+			  msg += (i+1) + " - " + this.exames[i].getNome()  + "\n";
 			}
 		}
+		return msg;
 	}
 	
 	// Conta quantos exames o paciente tem
@@ -55,6 +61,18 @@ public class Paciente extends Pessoa {
 	    }
 
 	    return contador;
+	}
+	
+	public void autorizaAcesso() {
+		this.auth.autorizar_acesso();
+	}
+	
+	public void negarAcesso() {
+		this.auth.negar_acesso();
+	}
+	
+	public Autorizacao getAutorizacao() {
+		return this.auth;
 	}
 	
 	private String getTipo() {

@@ -1,37 +1,26 @@
 package model;
 
 public class Autorizacao {
-	private Paciente paciente;
 	private boolean autoriza;
-	
-    public Autorizacao(Paciente paciente, boolean autoriza) {
-        this.setPaciente(paciente);
+
+    public Autorizacao(boolean autoriza) {
         this.setAutoriza(autoriza);
     }
 	
-	public static Autorizacao autorizar_acesso(Paciente paciente) {
-		return new Autorizacao(paciente, true);
+	public Autorizacao autorizar_acesso(){
+		return new Autorizacao(true);
 	}
 	
-	public static Autorizacao negar_acesso(Paciente paciente) {
-		return new Autorizacao(paciente, false);
+	public Autorizacao negar_acesso() {
+		return new Autorizacao(false);
 	}
 
-	public Paciente getPaciente() {
-		return paciente;
-	}
-
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
 
 	public String isAutoriza() {
-		String msg = "O paciente: " + paciente.getNome();
-
 		if(this.autoriza){
-			return msg + " autorizou o acesso a informaçoes";
+			return "autorizado o acesso a informaçoes\n";
 		} else {
-			return msg + " negou o acesso a informaçoes";
+			return "negado o acesso a informaçoes\n";
 		}
 	}
 

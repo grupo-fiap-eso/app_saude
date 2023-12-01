@@ -16,9 +16,6 @@ abstract class Pessoa {
     }
 
 
-    public abstract void exibirInformacoes();
-
-
 	public String getNome() {
 		return nome;
 	}
