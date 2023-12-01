@@ -118,8 +118,8 @@ public class CareYourSelf extends JFrame{
 		Exame exame4 = new Exame("Tumografia", "../exame.pdf", hospital1, medico2);
 	
 		//Cadastrar Pacientes
-		Paciente paciente1 = new Paciente("Joao", "Rua das Flores", "joao@gmail.com", "(013)99999-5555", 18);
-		Paciente paciente2 = new Paciente("Joana", "Rua 500", "joana@gmail.com", "(013)99999-4444", 28);
+		Paciente paciente1 = new Paciente( "Joao", "Rua das Flores", "joao@gmail.com", "(013)99999-5555", 18, "033692222-48");
+		Paciente paciente2 = new Paciente("Joana", "Rua 500", "joana@gmail.com", "(013)99999-4444", 28, "033.692.222-48");
 
 		paciente1.salvaExame(exame1);
 		paciente1.salvaExame(exame2);
