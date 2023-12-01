@@ -76,7 +76,7 @@ public class Paciente extends Pessoa {
 	}
 	
 	private String getTipo() {
-		return "Cliente";
+		return "Paciente";
 	}
 
 }
