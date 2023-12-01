@@ -8,6 +8,7 @@ public class Paciente extends Pessoa {
     
     public Paciente(String nome, String endereco, String email, String telefone, int idade, String cpf) {
         super(nome, endereco, email, telefone, idade);
+	    this.setCpf(cpf);
     }
 
     public String exibirInformacoes() {
