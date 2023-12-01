@@ -1,10 +1,12 @@
 package model;
 
 public class Paciente extends Pessoa {
+	private String cpf;
+	
     private Exame[] exames = new Exame[10];
     private Autorizacao auth = new Autorizacao(false);
-
-    public Paciente(String nome, String endereco, String email, String telefone, int idade) {
+    
+    public Paciente(String nome, String endereco, String email, String telefone, int idade, String cpf) {
         super(nome, endereco, email, telefone, idade);
     }
 
@@ -13,16 +15,27 @@ public class Paciente extends Pessoa {
     	msg = "Tipo: " + getTipo() + "\n";
 		msg += "Nome: " + getNome() + "\n";
 		msg += "Endereco: " + getEndereco() + "\n";
-		msg += "email: " + getEmail() + "\n";
+		msg += "Email: " + getEmail() + "\n";
 		msg += "Telefone: " + getTelefone() + "\n";
 		msg += "Idade: " + getIdade() + "\n";
-		msg += "=== Exames Feitos (" + this.contExames() + "):" + "\n";
+		msg += "CPF: " + getCpf() + "\n";
+		msg += " === Exames Feitos (" + this.contExames() + "):" + "\n";
 		msg += this.getExames();
 		msg += this.getAutorizacao().isAutoriza();
     	return msg;
     }
 
-    public void salvaExame(Exame exame) {
+  
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public void salvaExame(Exame exame) {
         // encontra primeira posição disponivel no vetor
         int posicaoNula = -1;
         for (int i = 0; i < this.exames.length; i++) {
@@ -36,7 +49,7 @@ public class Paciente extends Pessoa {
             exames[posicaoNula] = exame;
             System.out.println("Exame: "+ exame.getNome() + " salvo!");
         } else {
-            System.out.println("Erro: sem espaco disponivel");
+            System.out.println("Erro: sem espaço disponível");
         }
     }
 
